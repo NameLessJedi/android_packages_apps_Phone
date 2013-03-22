@@ -293,7 +293,7 @@ public class PhoneGlobals extends ContextWrapper
 
     private static boolean setSweep2WakeState(String state) {
         try {
-            FileWriter fw = new FileWriter("/sys/android_touch/sweep2wake");
+            FileWriter fw = new FileWriter("SWEEP2WAKE_FILE");
             try {
                 fw.write(state + "\n");
             } finally {
@@ -1227,7 +1227,6 @@ public class PhoneGlobals extends ContextWrapper
                     if (!mProximityWakeLock.isHeld()) {
                         if (mSweep2WakeCapable) {
                             mSweep2WakeState = getSweep2WakeState();
-                            if (DBG) Log.d(LOG_TAG, "Got sweep2wake state");
                             // Disable sweep2wake
                             setSweep2WakeState("0");
                         }
