@@ -293,7 +293,7 @@ public class PhoneGlobals extends ContextWrapper
 
     private static boolean setSweep2WakeState(String state) {
         try {
-            FileWriter fw = new FileWriter("SWEEP2WAKE_FILE");
+            FileWriter fw = new FileWriter(SWEEP2WAKE_FILE);
             try {
                 fw.write(state + "\n");
             } finally {
